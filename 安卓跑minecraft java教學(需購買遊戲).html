@@ -2,109 +2,41 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Minecraft Java 版手機遊玩程式介紹</title>
   <style>
     body {
       font-family: "微軟正黑體", Arial, sans-serif;
-      background: #f0f0f0;
-      color: #333;
-      margin: 0; padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
       padding: 20px;
-    }
-    #container {
-      background: white;
-      max-width: 480px;
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 30px;
-      box-sizing: border-box;
+      max-width: 600px;
+      margin: auto;
     }
     h1 {
       color: #4CAF50;
-      margin-bottom: 20px;
-      text-align: center;
     }
-    p {
-      line-height: 1.6;
-      margin-bottom: 15px;
-      font-size: 16px;
-    }
-    a.download-link {
-      display: block;
-      text-align: center;
-      margin: 30px auto 0;
-      padding: 12px 20px;
-      background: #4CAF50;
-      color: white;
+    a {
+      color: #2196F3;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 6px;
-      width: fit-content;
-      cursor: pointer;
-    }
-    a.download-link:hover {
-      background: #45a045;
-    }
-    .note {
-      color: #d32f2f;
-      font-weight: bold;
-      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <div id="container"></div>
-
+  <div id="app"></div>
   <script>
-    const container = document.getElementById('container');
-
-    // 建立標題
-    const title = document.createElement('h1');
-    title.textContent = 'Minecraft Java 版手機遊玩程式';
-    container.appendChild(title);
-
-    // 建立內容段落
-    const paragraphs = [
-      '這是一個能讓你在手機上玩 Minecraft Java 版的程式。',
-      '注意: 啟動之前要先擁有一個已經購買 Minecraft Java 的帳號。',
-      '此為 APK (Android 可用)。',
-      '此軟件原理是在你的設備上運行虛擬機 (開源於 Linux)。為了檔案不過大，此非完整系統。',
-      '下載連結: https://pojavlauncher.net/',
-      '我們希望這個軟件永遠免費，有要付費的都是盜版。'
+    const app = document.getElementById('app');
+    const content = [
+      "這是一個能讓你在手機上玩 Minecraft Java 版的程式。",
+      "注意:啟動之前要先擁有一個已經購買 Minecraft Java 的帳號。",
+      "此為 APK (Android 可用)。",
+      "此軟件原理是在你的設備上運行虛擬機 (開源於 Linux)，為了檔案不過大，此非完整系統。",
+      '下載連結: <a href="https://pojavlauncher.net/" target="_blank" rel="noopener noreferrer">https://pojavlauncher.net/</a>',
+      "我們希望這個軟件永遠免費，有要付費的都是盜版。"
     ];
-
-    paragraphs.forEach((text, index) => {
+    content.forEach(text => {
       const p = document.createElement('p');
-      p.textContent = text;
-
-      // 加紅字強調那句
-      if (index === 1) {
-        p.classList.add('note');
-      }
-
-      // 下載連結改成可點擊
-      if (index === 4) {
-        p.innerHTML = '下載連結: <a href="https://pojavlauncher.net/" target="_blank" rel="noopener noreferrer">https://pojavlauncher.net/</a>';
-      }
-
-      container.appendChild(p);
+      p.innerHTML = text;
+      app.appendChild(p);
     });
-
-    // 建立下載按鈕
-    const downloadBtn = document.createElement('a');
-    downloadBtn.textContent = '點此下載 APK';
-    downloadBtn.href = 'https://pojavlauncher.net/';
-    downloadBtn.target = '_blank';
-    downloadBtn.rel = 'noopener noreferrer';
-    downloadBtn.className = 'download-link';
-
-    container.appendChild(downloadBtn);
   </script>
 </body>
 </html>
