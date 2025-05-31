@@ -1,6 +1,6 @@
 # 手機玩 Minecraft Java 版
 
-**注意：**啟動之前要先擁有一個已購買的 Minecraft Java 帳號。
+注意：啟動之前要先擁有一個已購買的 Minecraft Java 帳號。
 
 此為 **APK**（Android 可用）
 
